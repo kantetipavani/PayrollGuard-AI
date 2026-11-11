@@ -7,6 +7,9 @@
     "dev": "vite --host 0.0.0.0",
     "build": "vite build",
     "preview": "vite preview",
+    "test": "node tests/access-permissions.test.mjs && python -m unittest tests/test_payroll_calculation.py",
+    "test:frontend": "node tests/access-permissions.test.mjs",
+    "test:backend": "python -m unittest tests/test_payroll_calculation.py",
     "format": "oxfmt"
   },
   "dependencies": {

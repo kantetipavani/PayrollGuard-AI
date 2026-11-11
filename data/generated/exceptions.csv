@@ -1,5 +1,5 @@
-exception_id,rule_id,employee_id,pay_period_id,severity,title,status,created_at,details,_id
-EXC-GT-001,VR-004,EMP-000001,PP-2026-01,HIGH,Approved hours exceed period maximum,OPEN,2026-10-22T00:00:00+00:00,Deterministic synthetic validation fixture; review before payroll export.,6af429b23bad14176811923a
-EXC-GT-002,VR-005,EMP-000002,PP-2026-01,MEDIUM,Duplicate allowance transaction,OPEN,2026-10-22T00:00:00+00:00,Deterministic synthetic validation fixture; review before payroll export.,6af429b23bad14176811923b
-EXC-GT-003,VR-006,EMP-000003,PP-2026-01,CRITICAL,Unapproved time entry must be excluded,OPEN,2026-10-22T00:00:00+00:00,Deterministic synthetic validation fixture; review before payroll export.,6af429b23bad14176811923c
-EXC-GT-004,VR-007,EMP-000012,PP-2026-01,HIGH,Duplicate leave deduction,OPEN,2026-10-22T00:00:00+00:00,Deterministic synthetic validation fixture; review before payroll export.,6af429b23bad14176811923d
+exception_id,rule_id,employee_id,pay_period_id,severity,title,status
+EXC-GT-001,VR-004,EMP-000001,PP-2026-01,HIGH,Approved hours exceed period maximum,OPEN
+EXC-GT-002,VR-005,EMP-000002,PP-2026-01,MEDIUM,Duplicate allowance transaction,OPEN
+EXC-GT-003,VR-006,EMP-000003,PP-2026-01,CRITICAL,Unapproved time entry must be excluded,OPEN
+EXC-GT-004,VR-007,EMP-000012,PP-2026-01,HIGH,Duplicate leave deduction,OPEN

@@ -1,9 +1,7 @@
 {
   "seed": 20261022,
-  "generated_at": "2026-10-22T00:00:00+00:00",
   "counts": {
     "employees": 3000,
-    "pay_groups": 1,
     "pay_periods": 3,
     "time_entries": 90000,
     "leave_records": 3000,
@@ -16,7 +14,6 @@
   },
   "expected": {
     "employees": 3000,
-    "pay_groups": 1,
     "pay_periods": 3,
     "time_entries": 90000,
     "leave_records": 3000,
@@ -26,5 +23,6 @@
     "approvals": 4,
     "payroll_exports": 0,
     "validation_rules": 10
-  }
+  },
+  "status": "PASS"
 }

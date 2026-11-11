@@ -44,10 +44,12 @@ Thumbs.db
 *.swp
 *.swo
 
-# Backend
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
 backend/.venv/
-backend/__pycache__/
-backend/**/*.pyc
+.venv/
 backend/.env
 
 
