@@ -1,0 +1,3 @@
+@echo off
+echo Starting Naxpayroll Frontend on http://localhost:8443...
+npm run dev

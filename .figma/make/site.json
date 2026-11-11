@@ -1,0 +1,10 @@
+{
+  "description": "Efficiently manage business expenses with receipt uploads and category tagging, streamlining financial tracking and enhancing budget oversight.",
+  "robots": {
+    "index": false
+  },
+  "accessibility": {
+    "addBypassLinks": false,
+    "ignoreReducedMotion": false
+  }
+}

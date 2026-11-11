@@ -1,0 +1,118 @@
+.access-user-card { background: var(--fiori-card); border: 1px solid var(--fiori-border); border-radius: 8px; overflow: hidden; color: var(--fiori-text-1); min-height: 520px; }
+.access-user-header { display: flex; align-items: center; justify-content: space-between; gap: 20px; padding: 20px 24px; border-bottom: 1px solid var(--fiori-border); }
+.access-user-header h2, .access-user-header h3 { margin: 0; font-size: 18px; }
+.access-user-header p { margin: 4px 0 0; color: var(--fiori-text-2); font-size: 12px; }
+.access-user-header-actions, .access-user-form-footer > div { display: flex; align-items: center; gap: 10px; }
+.access-primary-button, .access-secondary-button, .access-text-button, .access-icon-button { border-radius: 5px; font: inherit; font-size: 13px; font-weight: 600; cursor: pointer; display: inline-flex; align-items: center; justify-content: center; gap: 7px; }
+.access-primary-button { border: 1px solid var(--z-brand, #306FD1); background: var(--z-brand, #306FD1); color: #FFFFFF !important; padding: 8px 16px; font-weight: 600; box-shadow: 0 1px 2px rgba(48, 111, 209, 0.2); transition: all 0.15s ease; }
+.access-primary-button:hover { background: var(--z-brand-hover, #2459AD); border-color: var(--z-brand-hover, #2459AD); box-shadow: 0 2px 6px rgba(48, 111, 209, 0.3); }
+.access-primary-button:disabled { opacity: .5; cursor: not-allowed; }
+.access-secondary-button { border: 1px solid var(--fiori-border); background: white; color: var(--fiori-text-1); padding: 8px 14px; }
+.access-secondary-button:hover, .access-icon-button:hover { background: var(--fiori-highlight); }
+.access-text-button { border: 0; background: transparent; color: var(--fiori-brand); padding: 7px; }
+.access-icon-button { width: 36px; height: 36px; border: 1px solid var(--fiori-border); background: white; color: var(--fiori-text-2); padding: 0; }
+.access-admin-banner { display: grid; grid-template-columns: 180px minmax(0, 1fr) auto; gap: 18px; align-items: center; padding: 20px 24px; background: #fff8f0; border-bottom: 1px solid var(--fiori-border); }
+.access-admin-illustration svg { display: block; width: 180px; height: 104px; }
+.access-admin-copy h3 { margin: 0 0 8px; font-size: 15px; }
+.access-admin-copy p { margin: 0; color: var(--fiori-text-2); font-size: 12px; line-height: 1.6; max-width: 900px; }
+.access-current-admin { display: inline-flex; align-items: center; gap: 6px; color: var(--fiori-brand); background: var(--fiori-info-bg); border-radius: 20px; padding: 5px 10px; margin-top: 12px; font-size: 11px; font-weight: 700; }
+.access-user-filters { position: relative; z-index: 5; display: grid; grid-template-columns: minmax(280px, 1fr) minmax(150px, 190px) minmax(150px, 190px) auto; gap: 16px; align-items: end; padding: 20px 24px; background: white; border-bottom: 1px solid var(--fiori-border); }
+.access-user-search > label, .access-filter-picker > span { display: block; margin-bottom: 7px; color: var(--fiori-text-2); font-size: 11px; font-weight: 600; }
+.access-user-search { position: relative; min-width: 0; }
+.access-user-search > .access-search-control { height: 40px; display: flex; align-items: center; gap: 10px; padding: 0 12px; border: 1px solid var(--fiori-border); border-radius: 8px; background: #f8fafc; color: var(--fiori-text-3); transition: border-color .15s, box-shadow .15s; }
+.access-user-search > .access-search-control:focus-within { border-color: var(--fiori-brand); box-shadow: 0 0 0 2px #0070f21f; }
+.access-user-search input { flex: 1; min-width: 0; border: 0; outline: 0; background: transparent; color: var(--fiori-text-1); font: inherit; font-size: 12px; }
+/* The enclosing control owns the border and focus ring, including inside the app shell. */
+.access-user-card .access-user-filters :is(.access-user-search, .access-filter-options) input[type="search"] { appearance: none; height: 100%; min-height: 0; padding: 0; border: 0 !important; border-radius: 0 !important; outline: none !important; box-shadow: none; background: transparent !important; }
+.access-user-search input::placeholder { color: var(--fiori-text-3); opacity: .8; }
+.access-user-search svg { flex-shrink: 0; }
+.access-user-search button { flex-shrink: 0; border-radius: 4px; }
+.access-user-search button:hover { color: var(--fiori-brand); background: var(--fiori-highlight); }
+.access-user-search input::-webkit-search-cancel-button { display: none; }
+.access-user-search button { width: 24px; height: 24px; display: grid; place-items: center; padding: 0; border: 0; background: transparent; color: var(--fiori-text-3); cursor: pointer; }
+.access-filter-picker { position: relative; min-width: 0; }
+.access-filter-picker > button { width: 100%; height: 40px; display: flex; align-items: center; justify-content: space-between; gap: 10px; padding: 0 12px; border: 1px solid var(--fiori-border); border-radius: 8px; background: white; color: var(--fiori-text-1); font: inherit; font-size: 12px; cursor: pointer; }
+.access-filter-picker > button:hover, .access-filter-picker > button[aria-expanded=true] { border-color: var(--fiori-brand); }
+.access-filter-options { position: absolute; top: calc(100% + 5px); left: 0; right: 0; min-width: 220px; overflow: hidden; border: 1px solid var(--fiori-border); border-radius: 8px; background: white; box-shadow: 0 8px 24px #0f172a18; }
+.access-filter-options > label { height: 38px; display: flex; align-items: center; gap: 7px; padding: 0 10px; background: var(--fiori-page-bg); border-bottom: 1px solid var(--fiori-border); color: var(--fiori-text-3); }
+.access-filter-options > label:focus-within { box-shadow: inset 0 -2px var(--fiori-brand); }
+.access-filter-options input { min-width: 0; width: 100%; border: 0; outline: 0; background: transparent; color: var(--fiori-text-1); font: inherit; font-size: 12px; }
+.access-filter-options [role=listbox] { max-height: 220px; overflow-y: auto; padding: 5px; }
+.access-filter-options [role=option] { width: 100%; display: flex; align-items: center; justify-content: space-between; gap: 8px; padding: 9px; border: 0; border-radius: 4px; background: transparent; color: var(--fiori-text-1); text-align: left; font: inherit; font-size: 12px; cursor: pointer; }
+.access-filter-options [role=option]:hover, .access-filter-options [role=option].is-selected { background: var(--fiori-highlight); color: var(--fiori-brand); }
+.access-filter-options [role=option] span { font-size: 10px; font-weight: 700; }
+.access-filter-options [role=listbox] > p { margin: 0; padding: 14px 8px; color: var(--fiori-text-3); text-align: center; font-size: 11px; }
+.access-filter-summary { min-height: 40px; flex-wrap: wrap; display: flex; align-items: center; gap: 12px; white-space: nowrap; }
+.access-filter-summary span { padding: 5px 9px; border-radius: 6px; background: var(--fiori-page-bg); color: var(--fiori-text-2); font-size: 11px; font-weight: 500; }
+.access-filter-summary button, .access-empty-row button { border: 0; background: transparent; color: var(--fiori-brand); padding: 0; font: inherit; font-size: 11px; font-weight: 700; cursor: pointer; }
+.access-user-table-wrap { overflow-x: auto; padding: 8px 20px 20px; background: var(--z-app-bg, #F4F6F9); }
+.access-user-table { width: 100%; min-width: 720px; border-collapse: separate !important; border-spacing: 0 10px !important; font-size: 13px; }
+.access-user-table th { background: transparent; color: var(--z-text-muted, #7A8DA0); padding: 8px 18px; text-align: left; font-size: 11px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.05em; border: none; }
+.access-user-table th:first-child { width: 48%; padding-left: 20px; }
+.access-user-table th:nth-child(2) { width: 20%; }
+.access-user-table th:nth-child(3) { width: 18%; }
+.access-user-table th:last-child { text-align: right; padding-right: 20px; }
+.access-user-table tbody tr { background: #FFFFFF; box-shadow: 0 1px 4px rgba(26, 43, 75, 0.06); border-radius: 8px; transition: background 0.15s ease, box-shadow 0.15s ease, transform 0.12s ease; }
+.access-user-table tbody tr:hover { background: var(--z-row-hover, #F5F7FF) !important; box-shadow: 0 3px 8px rgba(26, 43, 75, 0.10); transform: translateY(-1px); }
+.access-user-table td { padding: 14px 18px; border-top: 1px solid var(--z-border, #DDE3EC); border-bottom: 1px solid var(--z-border, #DDE3EC); color: var(--z-text-primary, #1A2B4B); vertical-align: middle; }
+.access-user-table td:first-child { display: flex; align-items: center; gap: 12px; border-left: 1px solid var(--z-border, #DDE3EC); border-top-left-radius: 8px; border-bottom-left-radius: 8px; padding-left: 20px; }
+.access-user-table td:last-child { border-right: 1px solid var(--z-border, #DDE3EC); border-top-right-radius: 8px; border-bottom-right-radius: 8px; padding-right: 20px; text-align: right; }
+.access-user-table td:first-child > div:last-child { display: flex; flex-direction: column; gap: 3px; min-width: 0; }
+.access-avatar { width: 38px; height: 38px; border-radius: 50%; flex: 0 0 38px; display: grid; place-items: center; color: white; font-size: 12px; font-weight: 800; }
+.access-avatar-0 { background: #0875e1; } .access-avatar-1 { background: #6b5bd2; } .access-avatar-2 { background: #188918; } .access-avatar-3 { background: #c45500; } .access-avatar-4 { background: #0f828f; }
+.access-user-name { border: 0; background: none; color: var(--fiori-brand); padding: 0; font: inherit; font-weight: 700; text-align: left; cursor: pointer; width: fit-content; }
+.access-user-name:hover { text-decoration: underline; }
+.access-user-table td:first-child span { color: var(--fiori-text-2); font-size: 12px; overflow: hidden; text-overflow: ellipsis; }
+.access-user-table td:first-child small { display: flex; align-items: center; gap: 4px; color: var(--fiori-brand); font-size: 10px; font-weight: 700; }
+.access-status { font-size: 11px; font-weight: 800; text-transform: uppercase; }
+.access-status-active { color: var(--fiori-success); }
+.access-status-locked { color: var(--fiori-error); }
+.access-user-action-cell { position: relative; text-align: right; }
+.access-more-button { width: 30px; height: 30px; border-radius: 50%; border: 1px solid var(--fiori-border); color: var(--fiori-text-2); background: white; display: inline-grid; place-items: center; cursor: pointer; }
+.access-more-button:hover { color: var(--fiori-brand); border-color: var(--fiori-brand); }
+.access-user-menu { position: absolute; z-index: 20; right: 24px; top: 45px; width: 190px; padding: 6px; background: white; border: 1px solid var(--fiori-border); border-radius: 7px; box-shadow: 0 8px 24px #0f172a2e; }
+.access-user-menu button { width: 100%; border: 0; background: transparent; color: var(--fiori-text-1); padding: 9px 10px; display: flex; align-items: center; gap: 8px; text-align: left; border-radius: 4px; font: inherit; font-size: 12px; cursor: pointer; }
+.access-user-menu button:hover { background: var(--fiori-highlight); }
+.access-user-table tr:last-child .access-user-menu { top: auto; bottom: 42px; }
+.access-empty-row td { height: 180px; display: table-cell !important; text-align: center; }
+.access-empty-row strong, .access-empty-row span { display: block; margin-bottom: 7px; }
+.access-empty-row span { color: var(--fiori-text-2) !important; }
+.access-user-form { min-height: 580px; }
+.access-user-form-body { width: min(760px, 100%); padding: 24px; display: flex; flex-direction: column; gap: 22px; }
+.access-form-row { display: grid; grid-template-columns: 140px minmax(0, 470px); gap: 24px; align-items: start; }
+.access-form-row > label { padding-top: 10px; font-size: 13px; font-weight: 600; }
+.access-form-row label span, .access-user-form-footer p span { color: var(--fiori-error); }
+.access-form-row input, .access-form-row select, .access-dialog-body select { width: 100%; border: 1px solid var(--fiori-border); border-radius: 5px; color: var(--fiori-text-1); background: white; padding: 10px 12px; font: inherit; font-size: 13px; }
+.access-form-row input:focus, .access-form-row select:focus, .access-dialog-body select:focus { outline: 2px solid #0070f233; border-color: var(--fiori-brand); }
+.access-form-row [aria-invalid=true] { border-color: var(--fiori-error); }
+.access-role-description { margin: 8px 0 0; font-size: 12px; color: var(--fiori-text-2); }
+.access-field-error { margin: 5px 0 0; color: var(--fiori-error); font-size: 11px; }
+.access-user-form-footer { width: min(760px, 100%); border-top: 1px solid var(--fiori-border); padding: 18px 24px; display: flex; align-items: center; justify-content: space-between; }
+.access-user-form-footer > p { color: var(--fiori-error); font-size: 11px; margin: 0; }
+.access-dialog { position: fixed; inset: 0; width: min(580px, calc(100vw - 32px)); max-height: calc(100dvh - 32px); margin: auto; padding: 0; overflow: auto; border: 1px solid var(--fiori-border); border-radius: 8px; color: var(--fiori-text-1); box-shadow: 0 18px 46px #0f172a47; }
+.access-dialog::backdrop { background: #1d2d3e70; }
+.access-dialog > header { padding: 18px 20px; display: flex; align-items: center; justify-content: space-between; gap: 20px; border-bottom: 1px solid var(--fiori-border); }
+.access-dialog h3 { margin: 0; font-size: 16px; }
+.access-dialog header p { margin: 4px 0 0; color: var(--fiori-text-2); font-size: 11px; }
+.access-dialog-body, .access-invite-preview { padding: 22px; }
+.access-dialog-body label { display: block; margin-bottom: 7px; font-size: 12px; font-weight: 700; }
+.access-dialog-body p { color: var(--fiori-text-2); font-size: 11px; }
+.access-dialog > footer { display: flex; gap: 10px; padding: 14px 20px; border-top: 1px solid var(--fiori-border); }
+.access-preview-brand { display: flex; align-items: center; gap: 8px; color: var(--fiori-brand); margin-bottom: 22px; }
+.access-invite-preview p { color: var(--fiori-text-2); line-height: 1.6; font-size: 13px; }
+.access-preview-note { margin-top: 22px; font-size: 11px !important; }
+.access-sr-only { position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip: rect(0, 0, 0, 0); white-space: nowrap; border: 0; }
+@media (max-width: 1050px) { .access-user-filters { grid-template-columns: minmax(260px, 1fr) repeat(2, minmax(150px, .5fr)); } .access-filter-summary { grid-column: 1 / -1; justify-content: flex-end; } }
+@media (max-width: 900px) { .access-admin-banner { grid-template-columns: 110px minmax(0, 1fr); } .access-admin-illustration svg { width: 110px; } .access-admin-banner > .access-primary-button { grid-column: 2; justify-self: start; } }
+@media (max-width: 640px) { .access-user-header, .access-user-form-footer { align-items: flex-start; flex-direction: column; } .access-user-header-actions { width: 100%; justify-content: space-between; } .access-admin-banner { grid-template-columns: 1fr; } .access-admin-illustration { display: none; } .access-admin-banner > .access-primary-button { grid-column: 1; } .access-user-filters { grid-template-columns: 1fr; } .access-filter-summary { grid-column: 1; justify-content: space-between; } .access-form-row { grid-template-columns: 1fr; gap: 7px; } .access-user-form-body { padding: 18px; } }
+
+.access-user-search .access-value-help { width: 30px; height: 24px; border: 1px solid var(--fiori-border); border-radius: 4px; background: white; color: var(--fiori-text-2); font-size: 10px; font-weight: 600; }
+.access-search-suggestions { position: absolute; top: calc(100% + 6px); left: 0; right: 0; z-index: 10; overflow: hidden; border: 1px solid var(--fiori-border); border-radius: 8px; background: white; box-shadow: 0 8px 24px #0f172a18; }
+.access-search-suggestions header { display: flex; flex-wrap: wrap; justify-content: space-between; gap: 6px; padding: 10px 12px; border-bottom: 1px solid var(--fiori-border); color: var(--fiori-text-2); font-size: 11px; font-weight: 600; }
+.access-search-suggestions header span { font-size: 10px; font-weight: 400; color: var(--fiori-text-3); }
+.access-search-suggestions [role=listbox] { max-height: 260px; overflow-y: auto; padding: 5px; }
+.access-search-suggestions button[role=option] { display: flex; justify-content: space-between; gap: 12px; width: 100%; height: auto; min-height: 36px; padding: 8px; text-align: left; font: inherit; font-size: 12px; color: var(--fiori-text-1); }
+.access-search-suggestions button[role=option] > span { overflow-wrap: anywhere; }
+.access-search-suggestions small { flex-shrink: 0; color: var(--fiori-text-3); font-size: 10px; }
+.access-search-suggestions button[aria-selected=true], .access-search-suggestions button:hover { background: var(--fiori-highlight); color: var(--fiori-brand); }
+.access-search-suggestions p { padding: 12px; margin: 0; color: var(--fiori-text-3); font-size: 12px; }

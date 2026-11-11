@@ -1,0 +1,1060 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800&display=swap');
+@import 'tailwindcss';
+
+/* ══════════════════════════════════════════════════════════════════
+   ZOHO PAYROLL DESIGN SYSTEM — Complete Token Set
+   ══════════════════════════════════════════════════════════════════ */
+:root {
+  /* Brand */
+  --z-brand:          #306FD1;
+  --z-brand-hover:    #2459AD;
+  --z-brand-active:   #1A4280;
+  --z-brand-bg:       #EEF4FE;
+  --z-brand-bg-hover: #DDE8FC;
+
+  /* Backgrounds */
+  --z-app-bg:         #F4F6F9;
+  --z-card:           #FFFFFF;
+  --z-sidebar-bg:     #FFFFFF;
+  --z-header-bg:      #FFFFFF;
+  --z-row-hover:      #F5F7FF;
+  --z-input-bg:       #FFFFFF;
+
+  /* Text */
+  --z-text-primary:   #1A2B4B;
+  --z-text-secondary: #455A71;
+  --z-text-muted:     #7A8DA0;
+  --z-text-link:      #306FD1;
+
+  /* Borders */
+  --z-border:         #DDE3EC;
+  --z-border-strong:  #BAC4D3;
+  --z-border-focus:   #306FD1;
+
+  /* Status */
+  --z-success:        #107E3E;
+  --z-success-bg:     #F0FBF4;
+  --z-success-border: #A8D9B9;
+  --z-warning:        #E2680A;
+  --z-warning-bg:     #FFF8F0;
+  --z-warning-border: #F5BE7A;
+  --z-error:          #C00000;
+  --z-error-bg:       #FFF2F2;
+  --z-error-border:   #F4B4B4;
+  --z-info:           #306FD1;
+  --z-info-bg:        #EEF4FE;
+  --z-info-border:    #A8C4F0;
+
+  /* Shadows */
+  --z-shadow-sm:  0 1px 3px rgba(26, 43, 75, 0.08);
+  --z-shadow-md:  0 2px 8px rgba(26, 43, 75, 0.10);
+  --z-shadow-lg:  0 8px 24px rgba(26, 43, 75, 0.14);
+  --z-shadow-xl:  0 16px 48px rgba(26, 43, 75, 0.18);
+
+  /* Layout */
+  --z-sidebar-width:     220px;
+  --z-sidebar-collapsed: 56px;
+  --z-header-height:     52px;
+  --z-radius-sm:         4px;
+  --z-radius-md:         6px;
+  --z-radius-lg:         10px;
+  --z-radius-xl:         14px;
+
+  /* Transition */
+  --z-transition: all 0.18s cubic-bezier(0.4, 0, 0.2, 1);
+
+  /* SAP / Fiori Compatibility Tokens (mapped to Zoho design tokens) */
+  --fiori-brand:          var(--z-brand, #306FD1);
+  --fiori-brand-hover:    var(--z-brand-hover, #2459AD);
+  --fiori-brand-active:   var(--z-brand-active, #1A4280);
+  --fiori-card:           var(--z-card, #FFFFFF);
+  --fiori-page-bg:        var(--z-app-bg, #F4F6F9);
+  --fiori-border:         var(--z-border, #DDE3EC);
+  --fiori-border-strong:  var(--z-border-strong, #BAC4D3);
+  --fiori-focus:          var(--z-border-focus, #306FD1);
+  --fiori-text-1:         var(--z-text-primary, #1A2B4B);
+  --fiori-text-2:         var(--z-text-secondary, #455A71);
+  --fiori-text-3:         var(--z-text-muted, #7A8DA0);
+  --fiori-highlight:      var(--z-brand-bg, #EEF4FE);
+  --fiori-info-bg:        var(--z-info-bg, #EEF4FE);
+  --fiori-error:          var(--z-error, #C00000);
+  --fiori-success:        var(--z-success, #107E3E);
+  --fiori-warning:        var(--z-warning, #E2680A);
+}
+
+/* ══════════════════════════════════════════════════════════════════
+   BASE RESET
+   ══════════════════════════════════════════════════════════════════ */
+*, *::before, *::after { box-sizing: border-box; }
+
+html, body, #root {
+  height: 100%;
+  font-family: 'Inter', 'Segoe UI', Arial, sans-serif;
+  font-size: 14px;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+html { background: var(--z-app-bg); }
+body {
+  margin: 0;
+  background: var(--z-app-bg);
+  color: var(--z-text-primary);
+}
+
+button, input, select, textarea { font: inherit; }
+button:focus-visible, input:focus-visible, select:focus-visible, textarea:focus-visible {
+  outline: 2px solid var(--z-border-focus, var(--fiori-focus, #0070F2)) !important;
+  outline-offset: 2px;
+}
+input[type="checkbox"], input[type="radio"] { accent-color: var(--z-brand, #0070F2); }
+
+/* ══════════════════════════════════════════════════════════════════
+   SCROLLBAR — Zoho thin style
+   ══════════════════════════════════════════════════════════════════ */
+::-webkit-scrollbar { width: 5px; height: 5px; }
+::-webkit-scrollbar-track { background: transparent; }
+::-webkit-scrollbar-thumb { background: var(--z-border-strong); border-radius: 3px; }
+::-webkit-scrollbar-thumb:hover { background: var(--z-text-muted); }
+
+/* ══════════════════════════════════════════════════════════════════
+   APP SHELL
+   ══════════════════════════════════════════════════════════════════ */
+.sap-app-shell {
+  background: var(--z-app-bg) !important;
+  font-family: 'Inter', sans-serif !important;
+}
+input:focus, input:focus-visible, select:focus, select:focus-visible, textarea:focus, textarea:focus-visible {
+  outline: none !important;
+  box-shadow: none !important;
+}
+
+/* ──────────────────────────────────────────────
+   TOP HEADER BAR — Zoho style
+   ────────────────────────────────────────────── */
+.sap-shell-bar {
+  height: var(--z-header-height) !important;
+  padding: 0 20px !important;
+  background: var(--z-header-bg) !important;
+  border-bottom: 1px solid var(--z-border) !important;
+  box-shadow: var(--z-shadow-sm) !important;
+  gap: 12px !important;
+}
+
+/* Hamburger menu */
+.sap-shell-bar > button:first-child {
+  width: 34px !important;
+  height: 34px !important;
+  border-radius: var(--z-radius-md) !important;
+  color: var(--z-text-secondary) !important;
+  transition: var(--z-transition);
+}
+.sap-shell-bar > button:first-child:hover {
+  background: var(--z-brand-bg) !important;
+  color: var(--z-brand) !important;
+}
+
+/* Clock pill */
+.sap-shell-clock {
+  padding: 4px 12px !important;
+  border-radius: 20px !important;
+  background: var(--z-app-bg) !important;
+  border: 1px solid var(--z-border) !important;
+  color: var(--z-text-secondary) !important;
+  font-size: 12px !important;
+  font-weight: 500 !important;
+  box-shadow: none !important;
+}
+
+/* Header action icons */
+.sap-shell-action {
+  width: 34px !important;
+  height: 34px !important;
+  border-radius: var(--z-radius-md) !important;
+  border: 0 !important;
+  background: transparent !important;
+  color: var(--z-text-secondary) !important;
+  transition: var(--z-transition);
+}
+.sap-shell-action:hover {
+  background: var(--z-brand-bg) !important;
+  color: var(--z-brand) !important;
+}
+
+/* Profile menu trigger */
+.sap-profile-menu { border-left-color: var(--z-border) !important; }
+.sap-profile-trigger {
+  border-radius: var(--z-radius-md) !important;
+  transition: var(--z-transition);
+}
+.sap-profile-trigger:hover { background: var(--z-brand-bg) !important; }
+.sap-profile-trigger > div:nth-child(2) > div:first-child { color: var(--z-text-primary) !important; font-weight: 600 !important; }
+.sap-profile-trigger > div:nth-child(2) > div:last-child { color: var(--z-text-muted) !important; }
+.sap-profile-trigger > span {
+  border-right-color: var(--z-text-muted) !important;
+  border-bottom-color: var(--z-text-muted) !important;
+}
+
+/* ──────────────────────────────────────────────
+   WORKSPACE GRID
+   ────────────────────────────────────────────── */
+.sap-workspace { background: var(--z-app-bg); }
+
+/* ──────────────────────────────────────────────
+   SIDEBAR — Zoho left navigation
+   ────────────────────────────────────────────── */
+.sap-side-navigation {
+  padding: 8px 8px !important;
+  background: var(--z-sidebar-bg) !important;
+  border-right: 1px solid var(--z-border) !important;
+  box-shadow: 1px 0 4px rgba(26, 43, 75, 0.05) !important;
+}
+.sap-side-navigation > div { margin-bottom: 1px; }
+
+.sap-nav-item {
+  display: flex !important;
+  align-items: center !important;
+  min-height: 38px !important;
+  padding: 0 10px !important;
+  border-radius: var(--z-radius-md) !important;
+  border-left: 0 !important;
+  color: var(--z-text-secondary) !important;
+  font-size: 13px !important;
+  font-weight: 400 !important;
+  transition: var(--z-transition);
+  white-space: nowrap;
+  overflow: hidden;
+}
+.sap-nav-item svg { width: 17px !important; height: 17px !important; flex-shrink: 0; }
+.sap-nav-item:hover {
+  background: var(--z-brand-bg) !important;
+  color: var(--z-brand) !important;
+}
+.sap-nav-item.is-active {
+  background: var(--z-brand-bg) !important;
+  color: var(--z-brand) !important;
+  font-weight: 600 !important;
+}
+.sap-nav-item.is-active::before {
+  position: absolute;
+  inset: 5px auto 5px -8px;
+  width: 3px;
+  border-radius: 0 3px 3px 0;
+  background: var(--z-brand);
+  content: "";
+}
+.sap-workspace.is-collapsed .sap-nav-item { padding: 0 !important; justify-content: center !important; }
+
+/* ──────────────────────────────────────────────
+   MAIN CONTENT AREA
+   ────────────────────────────────────────────── */
+.sap-main-content {
+  background: var(--z-app-bg) !important;
+  padding: 0 24px 32px !important;
+}
+
+/* ──────────────────────────────────────────────
+   BREADCRUMB / CONTEXT BAR — Zoho style
+   ────────────────────────────────────────────── */
+.sap-context-bar {
+  position: sticky !important;
+  top: 0 !important;
+  z-index: 18 !important;
+  display: flex !important;
+  align-items: center !important;
+  min-height: 40px !important;
+  margin: 0 -24px 20px !important;
+  padding: 0 24px !important;
+  border-bottom: 1px solid var(--z-border) !important;
+  background: rgba(255,255,255,0.95) !important;
+  backdrop-filter: blur(8px);
+  color: var(--z-text-muted) !important;
+  font-size: 12px !important;
+}
+.sap-context-separator { padding: 0 6px; color: var(--z-border-strong); }
+.sap-context-bar strong { color: var(--z-text-primary) !important; font-weight: 600; }
+.sap-context-spacer { flex: 1; }
+.sap-context-role {
+  padding: 2px 10px;
+  border: 1px solid var(--z-border);
+  border-radius: 20px;
+  background: var(--z-app-bg);
+  color: var(--z-text-secondary);
+  font-size: 11px;
+  font-weight: 500;
+}
+
+/* ══════════════════════════════════════════════════════════════════
+   CARDS — Zoho clean card style
+   ══════════════════════════════════════════════════════════════════ */
+.fiori-card, .sap-kpi-tile {
+  background: var(--z-card) !important;
+  border: 1px solid var(--z-border) !important;
+  border-radius: var(--z-radius-lg) !important;
+  box-shadow: var(--z-shadow-sm) !important;
+  transition: box-shadow 0.18s, transform 0.18s;
+  overflow: hidden;
+}
+.fiori-card:hover { box-shadow: var(--z-shadow-md) !important; }
+
+.sap-kpi-tile {
+  min-height: 100px !important;
+  padding: 18px 20px !important;
+  cursor: default;
+}
+.sap-kpi-tile:hover {
+  box-shadow: var(--z-shadow-md) !important;
+  transform: translateY(-2px);
+}
+.sap-kpi-tile > div:first-child {
+  color: var(--z-text-secondary) !important;
+  font-size: 11px !important;
+  font-weight: 600 !important;
+  text-transform: uppercase !important;
+  letter-spacing: 0.05em !important;
+  margin-bottom: 6px !important;
+}
+.sap-kpi-tile > div:nth-child(2) { font-size: 24px !important; font-weight: 700 !important; color: var(--z-text-primary) !important; }
+
+.fiori-card-body { padding: 20px 24px; }
+
+/* ══════════════════════════════════════════════════════════════════
+   PAGE HEADER — Zoho dynamic page title
+   ══════════════════════════════════════════════════════════════════ */
+.sap-dynamic-page-title {
+  margin: 0 -24px 20px !important;
+  padding: 16px 24px !important;
+  border: 0 !important;
+  border-bottom: 1px solid var(--z-border) !important;
+  border-radius: 0 !important;
+  background: var(--z-card) !important;
+  box-shadow: var(--z-shadow-sm) !important;
+}
+.sap-dynamic-page-title h1 {
+  font-size: 20px !important;
+  font-weight: 700 !important;
+  color: var(--z-text-primary) !important;
+  letter-spacing: -0.01em !important;
+}
+.sap-dynamic-page-title p { color: var(--z-text-secondary) !important; font-size: 13px !important; }
+
+/* ══════════════════════════════════════════════════════════════════
+   BUTTONS — Zoho button system
+   ══════════════════════════════════════════════════════════════════ */
+.sap-button {
+  display: inline-flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  gap: 6px !important;
+  min-height: 34px !important;
+  padding: 0 16px !important;
+  border-radius: var(--z-radius-md) !important;
+  font-size: 13px !important;
+  font-weight: 600 !important;
+  cursor: pointer !important;
+  transition: var(--z-transition) !important;
+  white-space: nowrap;
+}
+.sap-button-primary {
+  border: 1px solid var(--z-brand) !important;
+  background: var(--z-brand) !important;
+  color: #fff !important;
+  box-shadow: 0 2px 6px rgba(48, 111, 209, 0.25) !important;
+}
+.sap-button-primary:hover {
+  background: var(--z-brand-hover) !important;
+  border-color: var(--z-brand-hover) !important;
+  box-shadow: 0 3px 10px rgba(48, 111, 209, 0.30) !important;
+  transform: translateY(-1px);
+}
+.sap-button-secondary {
+  border: 1px solid var(--z-border-strong) !important;
+  background: var(--z-card) !important;
+  color: var(--z-text-secondary) !important;
+}
+.sap-button-secondary:hover {
+  border-color: var(--z-brand) !important;
+  color: var(--z-brand) !important;
+  background: var(--z-brand-bg) !important;
+}
+.sap-button-ghost {
+  border: 1px solid transparent !important;
+  background: transparent !important;
+  color: var(--z-brand) !important;
+}
+.sap-button-ghost:hover { background: var(--z-brand-bg) !important; }
+.sap-button-danger {
+  border: 1px solid var(--z-error) !important;
+  background: var(--z-error) !important;
+  color: #fff !important;
+}
+.sap-button-danger:hover { background: #a00000 !important; }
+.sap-button-small { min-height: 28px !important; padding: 0 10px !important; font-size: 12px !important; }
+.sap-button-success {
+  border: 1px solid var(--z-success) !important;
+  background: var(--z-success) !important;
+  color: #fff !important;
+}
+.sap-button-success:hover { background: #0a6430 !important; }
+.sap-button:disabled { opacity: 0.5; cursor: not-allowed !important; transform: none !important; }
+
+/* ══════════════════════════════════════════════════════════════════
+   FORM INPUTS — Zoho input style
+   ══════════════════════════════════════════════════════════════════ */
+.sap-field > label {
+  color: var(--z-text-secondary) !important;
+  font-size: 12px !important;
+  font-weight: 600 !important;
+  text-transform: none !important;
+  letter-spacing: 0 !important;
+}
+
+.sap-main-content input:not([type="checkbox"]):not([type="radio"]),
+.sap-main-content select,
+.sap-main-content textarea,
+.sap-dialog input:not([type="checkbox"]):not([type="radio"]),
+.sap-dialog select,
+.sap-dialog textarea {
+  min-height: 34px !important;
+  padding: 6px 10px !important;
+  border: 1px solid var(--z-border-strong) !important;
+  border-radius: var(--z-radius-md) !important;
+  background: var(--z-input-bg) !important;
+  color: var(--z-text-primary) !important;
+  font-size: 13px !important;
+  transition: border-color 0.15s;
+}
+.sap-main-content input:hover, .sap-main-content select:hover, .sap-main-content textarea:hover,
+.sap-dialog input:hover, .sap-dialog select:hover, .sap-dialog textarea:hover {
+  border-color: var(--z-text-secondary) !important;
+}
+.sap-main-content input:focus, .sap-main-content select:focus, .sap-main-content textarea:focus,
+.sap-dialog input:focus, .sap-dialog select:focus, .sap-dialog textarea:focus {
+  border-color: var(--z-brand) !important;
+  outline: none !important;
+  box-shadow: 0 0 0 2px rgba(48, 111, 209, 0.12) !important;
+}
+
+/* ══════════════════════════════════════════════════════════════════
+   BADGES / STATUS — Zoho badge style
+   ══════════════════════════════════════════════════════════════════ */
+.sap-object-status {
+  display: inline-flex !important;
+  align-items: center !important;
+  gap: 5px !important;
+  min-height: 20px !important;
+  padding: 2px 8px !important;
+  border-radius: 20px !important;
+  font-size: 11px !important;
+  font-weight: 600 !important;
+  white-space: nowrap;
+}
+
+/* ══════════════════════════════════════════════════════════════════
+   TABS — Zoho tab bar
+   ══════════════════════════════════════════════════════════════════ */
+.sap-icon-tab-bar {
+  gap: 0 !important;
+  border-bottom: 1px solid var(--z-border) !important;
+  padding: 0 4px !important;
+}
+.sap-icon-tab-bar > button {
+  min-height: 40px !important;
+  padding: 0 16px !important;
+  font-size: 13px !important;
+  font-weight: 500 !important;
+  color: var(--z-text-secondary) !important;
+  border-bottom: 2px solid transparent !important;
+  border-radius: 0 !important;
+  background: none !important;
+  transition: var(--z-transition);
+}
+.sap-icon-tab-bar > button:hover { color: var(--z-brand) !important; }
+.sap-icon-tab-bar > button[style*="borderBottom: 3px solid"] {
+  color: var(--z-brand) !important;
+  border-bottom-color: var(--z-brand) !important;
+  font-weight: 700 !important;
+}
+
+/* ══════════════════════════════════════════════════════════════════
+   TABLES — Zoho clean table
+   ══════════════════════════════════════════════════════════════════ */
+.fiori-table-wrap {
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+  border: 1px solid var(--z-border) !important;
+  border-radius: var(--z-radius-lg) !important;
+  background: var(--z-card);
+  box-shadow: var(--z-shadow-sm);
+}
+.fiori-table-wrap table { width: 100%; border-collapse: collapse; font-size: 13px; min-width: 700px; }
+.fiori-table-wrap th { position: sticky; top: 0; z-index: 2; background: #F8F9FC !important; }
+
+div:has(> table) { overflow-x: auto; -webkit-overflow-scrolling: touch; }
+table { max-width: 100%; }
+
+.sap-main-content table { border-spacing: 0; background: var(--z-card); font-variant-numeric: tabular-nums; }
+.sap-main-content th {
+  padding: 10px 14px !important;
+  border-bottom: 1px solid var(--z-border) !important;
+  background: #F8F9FC !important;
+  color: var(--z-text-secondary) !important;
+  font-size: 11px !important;
+  font-weight: 700 !important;
+  text-transform: uppercase !important;
+  letter-spacing: 0.05em !important;
+  white-space: nowrap;
+}
+.sap-main-content td {
+  height: 46px;
+  padding: 0 14px !important;
+  border-bottom: 1px solid var(--z-border) !important;
+  color: var(--z-text-primary);
+  font-size: 13px;
+}
+.sap-main-content td[colspan], .sap-main-content td[rowspan] { max-width: none !important; }
+.sap-main-content tr:has(> td[colspan="2"]) > td { background: #EEF4FE !important; }
+.sap-main-content tbody tr:hover { background: var(--z-row-hover) !important; cursor: pointer; }
+
+/* ══════════════════════════════════════════════════════════════════
+   PAGINATION
+   ══════════════════════════════════════════════════════════════════ */
+.sap-pagination {
+  background: var(--z-card) !important;
+  border-top: 1px solid var(--z-border) !important;
+  padding: 10px 16px !important;
+}
+
+/* ══════════════════════════════════════════════════════════════════
+   MODALS & SLIDE PANELS
+   ══════════════════════════════════════════════════════════════════ */
+.sap-dialog {
+  background: var(--z-card) !important;
+  border: 1px solid var(--z-border) !important;
+  border-radius: var(--z-radius-xl) !important;
+  box-shadow: var(--z-shadow-xl) !important;
+}
+
+[style*="position: fixed"] { word-break: break-word; }
+
+/* ══════════════════════════════════════════════════════════════════
+   KPI / METRIC RIBBON
+   ══════════════════════════════════════════════════════════════════ */
+.admin-kpi-ribbon {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+}
+.admin-kpi-ribbon > * { min-width: 0; overflow: hidden; }
+
+/* ══════════════════════════════════════════════════════════════════
+   DASHBOARD LAYOUTS
+   ══════════════════════════════════════════════════════════════════ */
+.admin-dashboard { display: flex; flex-direction: column; gap: 16px; }
+.admin-primary-analytics {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) 320px;
+}
+.admin-primary-analytics > * { min-width: 0; overflow: hidden; }
+.admin-secondary-analytics {
+  display: grid;
+  grid-template-columns: 1.15fr 1fr 1fr;
+}
+.admin-secondary-analytics > * { min-width: 0; overflow: hidden; }
+
+/* ══════════════════════════════════════════════════════════════════
+   SECTION LABELS
+   ══════════════════════════════════════════════════════════════════ */
+.sap-section-label {
+  color: var(--z-text-secondary) !important;
+  font-size: 12px !important;
+  font-weight: 600 !important;
+  text-transform: uppercase !important;
+  letter-spacing: 0.05em !important;
+}
+
+/* ══════════════════════════════════════════════════════════════════
+   CONTAINER QUERIES — Responsive layout adaptations
+   ══════════════════════════════════════════════════════════════════ */
+@container (max-width: 1250px) {
+  .platform-access-kpis { grid-template-columns: repeat(4, minmax(140px, 1fr)) !important; }
+  .org-access-filter, .admin-access-filter { grid-template-columns: minmax(0, 1fr) !important; }
+  .org-access-filter > :first-child {
+    grid-template-columns: minmax(240px, 1.2fr) repeat(2, minmax(130px, 0.7fr)) repeat(2, minmax(150px, 0.8fr)) auto auto !important;
+  }
+  .admin-access-filter {
+    grid-template-columns: minmax(240px, 1.4fr) repeat(3, minmax(130px, 0.8fr)) auto auto !important;
+  }
+}
+@container (max-width: 820px) {
+  .platform-access-view > :first-child { align-items: flex-start !important; flex-direction: column; }
+  .platform-access-kpis { grid-template-columns: repeat(2, minmax(0, 1fr)) !important; }
+  .org-access-filter, .admin-access-filter { grid-template-columns: minmax(0, 1fr) !important; }
+  .org-access-filter > :first-child { grid-template-columns: repeat(2, minmax(0, 1fr)) !important; }
+}
+
+/* ══════════════════════════════════════════════════════════════════
+   MEDIA QUERIES
+   ══════════════════════════════════════════════════════════════════ */
+@media (max-width: 1100px) {
+  .admin-primary-analytics { grid-template-columns: minmax(0, 1fr) !important; }
+  .org-dashboard-chart-row { grid-template-columns: minmax(0, 1fr) !important; }
+  .product-admin-insights { grid-template-columns: minmax(0, 1fr) !important; }
+  .admin-primary-analytics > :nth-child(2) { border-left: 0 !important; border-top: 1px solid var(--z-border); }
+  .admin-secondary-analytics { grid-template-columns: 1fr 1fr !important; }
+  .admin-secondary-analytics > :last-child { grid-column: 1 / -1; border-left: 0 !important; border-top: 1px solid var(--z-border); }
+}
+@media (max-width: 720px) {
+  .admin-dashboard { gap: 12px !important; }
+  .admin-kpi-ribbon, .admin-secondary-analytics { grid-template-columns: minmax(0, 1fr) !important; }
+  .admin-kpi-ribbon > *, .admin-secondary-analytics > * { border-left: 0 !important; border-right: 0 !important; border-bottom: 1px solid var(--z-border); }
+  .admin-secondary-analytics > :last-child { grid-column: auto; }
+}
+
+/* ══════════════════════════════════════════════════════════════════
+   ANIMATIONS
+   ══════════════════════════════════════════════════════════════════ */
+@keyframes zoho-fadeIn {
+  from { opacity: 0; transform: translateY(8px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+@keyframes zoho-slideIn {
+  from { opacity: 0; transform: translateX(12px); }
+  to   { opacity: 1; transform: translateX(0); }
+}
+@keyframes zoho-pulse {
+  0%   { box-shadow: 0 0 0 0 rgba(48, 111, 209, 0.4); }
+  70%  { box-shadow: 0 0 0 8px rgba(48, 111, 209, 0); }
+  100% { box-shadow: 0 0 0 0 rgba(48, 111, 209, 0); }
+}
+@keyframes shimmer {
+  0%   { opacity: 0.4; }
+  50%  { opacity: 0.8; }
+  100% { opacity: 0.4; }
+}
+@keyframes dashShimmer {
+  0%   { opacity: 0.45; }
+  50%  { opacity: 0.80; }
+  100% { opacity: 0.45; }
+}
+@keyframes fiori-fadeIn {
+  from { opacity: 0; transform: translateY(6px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+.fiori-fade-in, .zoho-fade-in { animation: zoho-fadeIn 0.22s ease-out; }
+.zoho-slide-in { animation: zoho-slideIn 0.22s ease-out; }
+
+/* ══════════════════════════════════════════════════════════════════
+   COLUMN CUSTOMIZER (unchanged structural styles)
+   ══════════════════════════════════════════════════════════════════ */
+.universal-column-trigger {
+  position: fixed; right: 28px; bottom: 24px; z-index: 20;
+  display: inline-flex; align-items: center; gap: 7px; padding: 10px 14px;
+  border: 1px solid var(--z-brand-hover); border-radius: var(--z-radius-md);
+  background: var(--z-brand); color: white;
+  box-shadow: 0 5px 16px rgba(48, 111, 209, 0.28);
+  font: 700 13px/1 'Inter', Arial, sans-serif; cursor: pointer;
+  transition: var(--z-transition);
+}
+.universal-column-trigger:hover { background: var(--z-brand-hover); }
+.universal-column-trigger span { font-size: 18px; line-height: 10px; transform: rotate(90deg); }
+.universal-column-trigger.is-inline {
+  position: static; right: auto; bottom: auto; z-index: auto;
+  min-height: 34px; padding: 0 14px; border: 1px solid var(--z-brand);
+  border-radius: var(--z-radius-md); background: #fff; color: var(--z-brand);
+  box-shadow: none; font-size: 13px;
+}
+.universal-column-trigger.is-inline:hover { background: var(--z-brand-bg); }
+.universal-column-trigger.is-inline span { transform: none; }
+.universal-column-backdrop {
+  position: fixed; inset: 0; z-index: 50; display: grid; place-items: center; padding: 20px;
+  background: rgba(26, 43, 75, 0.32);
+}
+.universal-column-dialog {
+  width: min(430px, 100%); max-height: min(600px, calc(100vh - 40px));
+  display: flex; flex-direction: column;
+  border: 1px solid var(--z-border); border-radius: var(--z-radius-xl);
+  background: white; box-shadow: var(--z-shadow-xl); overflow: hidden;
+}
+.universal-column-dialog-header {
+  display: flex; justify-content: space-between; gap: 14px; padding: 18px 20px 14px;
+  border-bottom: 1px solid var(--z-border);
+}
+.universal-column-dialog-header strong { display: block; color: var(--z-text-primary); font-size: 15px; }
+.universal-column-dialog-header div div { margin-top: 4px; color: var(--z-text-secondary); font-size: 12px; }
+.universal-column-dialog-header button { border: 0; background: transparent; color: var(--z-text-muted); font-size: 22px; line-height: 18px; cursor: pointer; }
+.universal-column-list { min-height: 80px; overflow: auto; border-top: 1px solid var(--z-border); border-bottom: 1px solid var(--z-border); }
+.universal-column-option { display: flex; align-items: center; gap: 10px; padding: 9px 20px 9px 13px; border-bottom: 1px solid #edf0f2; color: var(--z-text-primary); font-size: 13px; cursor: grab; }
+.universal-column-option:last-child { border-bottom: 0; }
+.universal-column-option.is-dragging { opacity: .45; background: var(--z-brand-bg); }
+.universal-column-option label { display: flex; flex: 1; align-items: center; gap: 10px; cursor: pointer; }
+.universal-column-option input { width: 15px; height: 15px; accent-color: var(--z-brand); }
+.universal-column-drag-handle { color: var(--z-text-muted); font-size: 19px; line-height: 1; letter-spacing: -3px; pointer-events: none; }
+.universal-column-dialog-footer { display: flex; justify-content: flex-end; gap: 8px; padding: 14px 20px; }
+.universal-column-dialog-footer button { padding: 7px 12px; border: 1px solid var(--z-border-strong); border-radius: var(--z-radius-md); background: white; color: var(--z-text-primary); font: 600 12px 'Inter', Arial, sans-serif; cursor: pointer; }
+.universal-column-dialog-footer .primary { border-color: var(--z-brand); background: var(--z-brand); color: white; }
+
+/* ══════════════════════════════════════════════════════════════════
+   REPORT TOOLBAR
+   ══════════════════════════════════════════════════════════════════ */
+.report-toolbar {
+  display: grid !important;
+  grid-template-columns: minmax(190px, 1fr) minmax(0, 3fr) !important;
+  align-items: center !important;
+  gap: 20px !important;
+  padding: 14px 20px !important;
+  background: var(--z-card);
+  border-bottom: 1px solid var(--z-border);
+}
+.report-toolbar-actions {
+  display: flex !important; align-items: flex-end !important;
+  flex-wrap: nowrap !important; gap: 12px !important;
+  min-width: 0; width: auto !important;
+}
+.report-toolbar-title { min-width: 170px; font-size: 15px !important; font-weight: 700 !important; color: var(--z-text-primary) !important; }
+.sap-date-filter {
+  display: grid !important;
+  grid-template-columns: 120px 180px 180px 110px !important;
+  width: 620px !important; max-width: 620px !important;
+  min-width: 0 !important; flex: none !important;
+  align-items: end !important; gap: 10px !important;
+}
+.sap-date-filter-title {
+  flex: 0 0 auto; align-self: flex-end; padding-bottom: 10px !important;
+  color: var(--z-text-secondary) !important; font-size: 12px !important; font-weight: 600 !important;
+}
+.sap-date-field {
+  display: flex; flex-direction: column; gap: 4px;
+  color: var(--z-text-secondary) !important; font-size: 12px !important; font-weight: 600 !important;
+  flex: 0 1 184px; min-width: 150px; min-height: 58px; justify-content: flex-end; line-height: 16px;
+}
+.sap-date-field input { width: 184px !important; max-width: 100%; }
+.report-period-field {
+  display: flex; flex-direction: column; align-items: stretch; gap: 4px;
+  min-width: 0; color: var(--z-text-secondary); font-size: 12px; font-weight: 600;
+  flex: 0 0 160px; width: 160px !important;
+}
+.report-period-field select { width: 100% !important; min-height: 34px; }
+.report-toolbar-actions > .sap-button { flex: 0 0 auto; align-self: flex-end; }
+
+@media (max-width: 1180px) {
+  .report-toolbar { grid-template-columns: 1fr !important; gap: 14px !important; }
+  .report-toolbar-actions { flex-wrap: wrap !important; }
+  .report-toolbar-actions > .sap-date-filter { display: flex !important; align-items: flex-end !important; flex: 1 1 auto; min-width: 0; width: auto; gap: 10px !important; }
+  .report-toolbar-actions > .sap-date-filter .sap-date-field input { width: 100% !important; }
+}
+@media (max-width: 820px) {
+  .report-toolbar-actions { align-items: stretch !important; flex-direction: column; }
+  .report-toolbar-actions > .sap-date-filter { display: grid !important; grid-template-columns: 1fr 1fr; flex-basis: 100%; }
+  .report-toolbar-actions > .sap-date-filter .sap-date-filter-title { grid-column: 1 / -1; }
+  .report-toolbar-actions > .sap-date-filter .sap-date-field { max-width: none; }
+  .report-toolbar-actions > .sap-date-filter > .sap-button { grid-column: 1 / -1; }
+  .report-toolbar-actions > .report-period-field, .report-toolbar-actions > .sap-button { flex: 1 1 100%; width: 100% !important; }
+}
+
+/* ══════════════════════════════════════════════════════════════════
+   EMPLOYEE SALARY SUMMARY HIGHLIGHT ROW
+   ══════════════════════════════════════════════════════════════════ */
+tr:has(> td[colspan="2"]) > td { background: var(--z-brand-bg) !important; }
+.sap-main-content tr:has(> td[colspan="2"]) > td { background: var(--z-brand-bg) !important; }
+
+/* ══════════════════════════════════════════════════════════════════
+   MISC UTILITIES
+   ══════════════════════════════════════════════════════════════════ */
+.fiori-truncate { overflow: hidden; text-overflow: ellipsis; white-space: nowrap; max-width: 100%; }
+
+div[style*="width: 330px"][style*="z-index: 5"] {
+  max-height: calc(100vh - 180px) !important;
+  overflow-y: auto !important;
+}
+
+/* Keep the complete report toolbar inside its card at every viewport width. */
+.report-toolbar {
+  grid-template-columns: minmax(0, 1fr) !important;
+  min-width: 0 !important;
+  max-width: 100% !important;
+}
+.report-toolbar-actions {
+  display: flex !important;
+  flex-wrap: wrap !important;
+  width: 100% !important;
+  max-width: 100% !important;
+  min-width: 0 !important;
+  overflow: visible !important;
+}
+.report-toolbar-actions > .sap-date-filter {
+  display: grid !important;
+  grid-template-columns: minmax(110px, .7fr) minmax(140px, 1fr) minmax(140px, 1fr) auto !important;
+  flex: 1 1 650px !important;
+  width: auto !important;
+  max-width: 100% !important;
+  min-width: 0 !important;
+}
+.report-toolbar-actions > .sap-date-filter .sap-date-field,
+.report-toolbar-actions > .sap-date-filter .sap-date-field input {
+  width: 100% !important;
+  max-width: none !important;
+  min-width: 0 !important;
+}
+.report-toolbar-actions > .report-period-field {
+  flex: 0 1 180px !important;
+  width: 180px !important;
+  max-width: 100% !important;
+}
+.report-toolbar-actions > .sap-button {
+  flex: 0 1 auto !important;
+  max-width: 100% !important;
+}
+
+/* Dialogs and transient UI */
+.sap-overlay { background: rgba(29,45,62,.42) !important; backdrop-filter: blur(1px); }
+.sap-dialog {
+  border-radius: 8px !important;
+  box-shadow: 0 16px 48px rgba(29,45,62,.28) !important;
+  animation: fiori-dialog-in .16s ease-out;
+}
+.sap-dialog > div:first-child, .sap-side-panel > div:first-child {
+  min-height: 54px;
+  background: #fff !important;
+}
+.sap-dialog > div:first-child > span { font-size: 18px !important; font-weight: 600 !important; }
+.sap-dialog > div:first-child button, .sap-side-panel > div:first-child button {
+  width: 32px;
+  height: 32px;
+  padding: 0 !important;
+  border: 0 !important;
+  border-radius: 4px !important;
+  color: var(--fiori-brand) !important;
+}
+.sap-dialog > div:first-child button:hover, .sap-side-panel > div:first-child button:hover { background: var(--fiori-highlight) !important; }
+.sap-side-panel { box-shadow: -8px 0 28px rgba(29,45,62,.18); }
+.sap-message-box { border-radius: 8px !important; box-shadow: 0 16px 48px rgba(29,45,62,.28) !important; }
+.sap-message-strip { border-radius: 4px !important; box-shadow: 0 3px 10px rgba(29,45,62,.16) !important; }
+
+/* Fiori launch/login surface */
+.sap-login-page {
+  position: relative;
+  overflow: hidden;
+  background:
+    radial-gradient(circle at 12% 14%, rgba(0,112,242,.10), transparent 28%),
+    radial-gradient(circle at 88% 86%, rgba(91,115,139,.10), transparent 30%),
+    #eef1f4 !important;
+}
+/* 
+
+*/
+.sap-login-page::after {
+  position: fixed;
+  top: 14px;
+  left: 20px;
+  color: var(--fiori-text-1);
+  font-size: 15px;
+  font-weight: 600;
+  
+}
+.sap-login-card {
+  z-index: 1;
+  max-width: 460px !important;
+  border-radius: 8px !important;
+  box-shadow: 0 6px 24px rgba(34,54,73,.14) !important;
+}
+
+@keyframes fiori-dialog-in {
+  from { opacity: 0; transform: translateY(8px) scale(.99); }
+  to { opacity: 1; transform: translateY(0) scale(1); }
+}
+
+@media (max-width: 760px) {
+  .sap-shell-clock, .sap-profile-trigger > div:nth-child(2), .sap-profile-trigger > span { display: none !important; }
+  .sap-shell-bar { padding: 0 8px !important; }
+  .sap-workspace { grid-template-columns: 56px minmax(0,1fr) !important; }
+  .sap-side-navigation { padding: 8px 4px !important; }
+  .sap-nav-item { justify-content: center !important; padding: 0 !important; }
+  .sap-nav-item > span { display: none !important; }
+  .sap-main-content { padding: 0 12px 20px !important; }
+  .sap-context-bar, .sap-dynamic-page-title { margin-left: -12px !important; margin-right: -12px !important; padding-left: 12px !important; padding-right: 12px !important; }
+  .sap-context-role { display: none; }
+  .sap-dynamic-page-title { align-items: flex-start !important; }
+  .sap-pagination { align-items: flex-start !important; flex-direction: column; gap: 10px; }
+  .sap-dialog { max-height: calc(100vh - 16px) !important; max-width: calc(100vw - 16px) !important; }
+  .sap-side-panel { width: min(440px, 100vw) !important; }
+  .sap-login-card { padding: 28px 20px !important; }
+}
+
+@container (max-width: 780px) {
+  .employee-information-grid {
+    grid-template-columns: minmax(0, 1fr) !important;
+    column-gap: 0 !important;
+  }
+}
+
+/* Shared application scale and palette. Keep every workspace on the same
+   compact canvas; page-specific forms can still grow with their content. */
+html, body, #root { min-width: 320px; }
+body { font-size: 14px; line-height: 1.45; }
+.sap-app-shell { min-height: 100dvh; }
+.sap-workspace { min-width: 0; }
+.sap-main-content {
+  min-width: 0;
+  padding: 0 24px 24px !important;
+  scrollbar-gutter: stable;
+}
+.sap-main-content > * { min-width: 0; }
+.sap-main-content h1 { font-size: clamp(21px, 1.8vw, 28px) !important; line-height: 1.25; }
+.sap-main-content h2 { font-size: clamp(18px, 1.5vw, 22px) !important; line-height: 1.3; }
+.sap-main-content h3 { font-size: clamp(16px, 1.25vw, 19px) !important; line-height: 1.35; }
+.sap-main-content section,
+.sap-main-content .fiori-card,
+.sap-main-content .fiori-table-wrap { max-width: 100%; }
+.sap-main-content [style*="min-height: 560px"] { min-height: 0 !important; }
+.sap-main-content [style*="margin: -18px -22px"] {
+  margin: 0 !important;
+  border: 1px solid var(--fiori-border);
+  border-radius: 8px;
+  overflow: hidden;
+}
+.sap-main-content input:not([type="checkbox"]):not([type="radio"]),
+.sap-main-content select,
+.sap-main-content textarea,
+.sap-dialog input:not([type="checkbox"]):not([type="radio"]),
+.sap-dialog select,
+.sap-dialog textarea { accent-color: var(--fiori-brand); }
+.sap-shell-clock { background: var(--fiori-page-bg) !important; color: var(--fiori-text-1) !important; box-shadow: none !important; border-color: var(--fiori-border) !important; }
+.universal-column-trigger { background: var(--fiori-brand); border-color: var(--fiori-brand); }
+
+/* Settings is a separate workspace, so give it the same page canvas and
+   content width as the main application shell. */
+.settings-app {
+  width: 100% !important;
+  min-height: 100vh;
+  background: var(--fiori-page-bg) !important;
+  color: var(--fiori-text-1);
+  font-size: 14px;
+  line-height: 1.45;
+}
+.settings-app main {
+  min-width: 0;
+  padding: 24px clamp(16px, 2vw, 28px) 48px !important;
+}
+.settings-app main > div { width: 100%; max-width: 1280px !important; }
+.settings-app h1 { font-size: clamp(21px, 1.8vw, 28px) !important; line-height: 1.25; }
+.settings-app h2 { font-size: clamp(18px, 1.5vw, 22px) !important; line-height: 1.3; }
+.settings-app h3 { font-size: clamp(16px, 1.25vw, 19px) !important; line-height: 1.35; }
+.settings-category-title { font-size: 14px !important; font-weight: 700 !important; line-height: 1.3 !important; }
+.settings-section-title { font-size: 18px !important; font-weight: 700 !important; }
+.settings-category-item { font-size: 13px !important; line-height: 1.35 !important; }
+.settings-page-heading { font-size: 21px !important; line-height: 1.3; }
+.settings-app input:not([type="checkbox"]):not([type="radio"]),
+.settings-app select,
+.settings-app textarea {
+  max-width: 100%;
+  border-color: var(--fiori-border-strong) !important;
+  border-radius: 5px !important;
+  color: var(--fiori-text-1) !important;
+  accent-color: var(--fiori-brand);
+}
+.settings-app [style*="min-height: 560px"] { min-height: 0 !important; }
+.settings-app [style*="margin: -18px -22px"] {
+  margin: 0 !important;
+  border: 1px solid var(--fiori-border);
+  border-radius: 8px;
+}
+.settings-entity-workspace > div:first-child { align-items: center !important; gap: 12px !important; margin-bottom: 16px !important; }
+.settings-entity-workspace > div:first-child > div:last-child { flex-wrap: wrap; justify-content: flex-end; }
+.settings-entity-workspace > div:nth-child(2) { border-radius: 8px !important; }
+.settings-location-grid { grid-template-columns: repeat(auto-fit, minmax(min(100%, 340px), 1fr)) !important; gap: 14px !important; padding: 16px !important; }
+.settings-location-card { min-height: 210px !important; padding: 20px !important; border-color: var(--fiori-border) !important; box-shadow: 0 1px 4px rgba(29,45,62,.07) !important; }
+.settings-location-card > div:first-child > div:first-child { font-size: 17px !important; }
+.settings-location-card > div:nth-child(2), .settings-location-card > div:nth-child(3) { font-size: 14px !important; }
+.settings-location-card > div:nth-child(4) { font-size: 13px !important; }
+.settings-entity-workspace input { width: min(250px, 100%) !important; }
+
+/* Statutory Components follows the same card, tab, and spacing system used by
+   the other Settings modules. */
+.statutory-components-view { min-width: 0; }
+.statutory-components-tabs { padding: 0 4px; }
+.statutory-components-tabs > div { gap: 22px !important; margin-bottom: 14px !important; }
+.statutory-components-content {
+  min-width: 0;
+  overflow: hidden;
+  border: 1px solid var(--fiori-border);
+  border-radius: 8px;
+  background: var(--fiori-card);
+}
+.statutory-components-content > div {
+  max-width: 100% !important;
+  padding: 20px 24px !important;
+  color: var(--fiori-text-1);
+}
+.statutory-components-content > div[style*="minmax(360px"],
+.statutory-components-content > div[style*="minmax(340px"] {
+  grid-template-columns: minmax(0, 1.2fr) minmax(280px, .8fr) !important;
+  gap: 22px !important;
+}
+.statutory-components-content aside {
+  border-color: var(--fiori-border) !important;
+  border-top-color: var(--fiori-brand) !important;
+  border-radius: 8px !important;
+  background: var(--fiori-page-bg) !important;
+  box-shadow: none !important;
+}
+.statutory-components-content section { border-color: var(--fiori-border) !important; }
+.statutory-components-content input,
+.statutory-components-content select { max-width: 100%; }
+
+.employee-portal-settings { border: 1px solid var(--fiori-border); border-radius: 8px; }
+.employee-portal-settings > div:first-child { gap: 22px !important; border-bottom-color: var(--fiori-border) !important; }
+.employee-portal-preferences { width: min(100%, 960px); grid-template-columns: minmax(0, 1fr) !important; padding: 22px 20px 26px !important; }
+.employee-portal-preferences section { border-color: var(--fiori-border) !important; }
+.employee-portal-preferences section > div:first-child { font-size: 16px !important; }
+.employee-portal-web-tabs { width: min(100%, 940px); padding: 22px 20px 26px !important; }
+.employee-portal-web-tabs > div[style*="padding: 28px 32px"] { display: none; }
+.employee-portal-web-tabs > div:first-child { font-size: 20px !important; font-weight: 650 !important; }
+.employee-portal-tab-list > div { min-width: 0; }
+
+/* One responsive report toolbar layout, without fixed-width controls. */
+.report-toolbar-actions { display: flex !important; align-items: flex-end !important; flex-wrap: wrap !important; gap: 12px !important; }
+.report-toolbar-actions > .sap-date-filter {
+  display: grid !important;
+  grid-template-columns: auto repeat(2, minmax(130px, 1fr)) auto !important;
+  flex: 1 1 540px !important;
+  width: auto !important;
+  max-width: 100% !important;
+}
+.report-toolbar-actions > .sap-date-filter .sap-date-field,
+.report-toolbar-actions > .sap-date-filter .sap-date-field input { width: 100% !important; max-width: 100% !important; min-width: 0 !important; }
+.report-toolbar-actions > .report-period-field { flex: 0 1 180px !important; width: 180px !important; }
+
+@media (max-width: 760px) {
+  .sap-main-content { padding: 0 12px 18px !important; }
+  .sap-context-bar, .sap-dynamic-page-title { margin-left: -12px !important; margin-right: -12px !important; padding-left: 12px !important; padding-right: 12px !important; }
+  .sap-main-content [style*="margin: -18px -22px"] { margin: 0 !important; }
+  .report-toolbar-actions { align-items: stretch !important; }
+  .report-toolbar-actions > .sap-date-filter { grid-template-columns: 1fr 1fr !important; flex-basis: 100% !important; }
+  .report-toolbar-actions > .sap-date-filter > .sap-date-filter-title,
+  .report-toolbar-actions > .sap-date-filter > .sap-button { grid-column: 1 / -1; }
+  .report-toolbar-actions > .report-period-field,
+  .report-toolbar-actions > .sap-button { width: 100% !important; flex: 1 1 100% !important; }
+  .settings-app main { padding: 18px 12px 32px !important; }
+  .settings-app aside { max-width: 100%; }
+  .settings-app [style*="grid-template-columns: minmax(220px, 1.5fr)"] { grid-template-columns: minmax(0, 1fr) minmax(0, 1fr) !important; }
+  .settings-entity-workspace > div:first-child { align-items: flex-start !important; flex-direction: column; }
+  .settings-entity-workspace > div:first-child > div:last-child { justify-content: flex-start; }
+  .settings-location-grid { grid-template-columns: minmax(0, 1fr) !important; padding: 12px !important; }
+}
+
+@media (max-width: 1100px) {
+  .statutory-components-content > div[style*="minmax(360px"],
+  .statutory-components-content > div[style*="minmax(340px"] {
+    grid-template-columns: minmax(0, 1fr) !important;
+  }
+}
+
+@media (max-width: 640px) {
+  .statutory-components-tabs { padding: 0; }
+  .statutory-components-tabs > div { gap: 16px !important; }
+  .statutory-components-content > div { padding: 16px !important; }
+  .employee-portal-preferences, .employee-portal-web-tabs { padding: 18px 14px 22px !important; }
+  .employee-portal-tab-list > div { align-items: flex-start !important; padding: 13px !important; }
+}
+@media (max-width: 720px) { .universal-column-trigger { right: 16px; bottom: 16px; } }

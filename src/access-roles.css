@@ -1,0 +1,64 @@
+.access-roles { color: var(--fiori-text-1); font-size: 13px; min-width: 0; }
+.access-roles h2 { margin: 0; font-size: 19px; font-weight: 700; }
+.access-roles h3 { margin: 0; font-size: 15px; font-weight: 700; }
+.access-roles p { margin: 5px 0 0; color: var(--fiori-text-2); }
+.ar-card { background: var(--fiori-card); border: 1px solid var(--fiori-border); border-radius: 8px; box-shadow: 0 1px 3px #00000008; }
+.ar-heading { display: flex; align-items: center; justify-content: space-between; gap: 16px; padding: 20px 24px; border-bottom: 1px solid var(--fiori-border); }
+.ar-button { border: 1px solid var(--fiori-border); border-radius: 6px; background: var(--fiori-card); color: var(--fiori-text-1); padding: 8px 16px; font: inherit; font-weight: 600; cursor: pointer; white-space: nowrap; transition: all 0.15s ease; }
+.ar-button:hover { background: var(--fiori-highlight); }
+.ar-primary { color: #FFFFFF !important; background-color: var(--z-brand, #306FD1) !important; border-color: var(--z-brand, #306FD1) !important; font-weight: 600; box-shadow: 0 1px 2px rgba(48, 111, 209, 0.2); }
+.ar-primary:hover { background-color: var(--z-brand-hover, #2459AD) !important; border-color: var(--z-brand-hover, #2459AD) !important; box-shadow: 0 2px 6px rgba(48, 111, 209, 0.3); }
+.ar-link { background: none; border: 0; padding: 0; color: var(--fiori-brand); cursor: pointer; font: inherit; text-align: left; }
+.ar-link:hover { text-decoration: underline; }
+.ar-table-wrap { overflow-x: auto; }
+.ar-table { border-collapse: collapse; width: 100%; text-align: left; }
+.ar-table th, .ar-table td { padding: 15px 20px; border-bottom: 1px solid var(--fiori-border); }
+.ar-table thead { background: var(--fiori-page-bg); color: var(--fiori-text-2); font-size: 11px; text-transform: uppercase; }
+.ar-table tr:last-child td, .ar-table tr:last-child th { border-bottom: 0; }
+.ar-role-list { min-width: 660px; }
+.ar-role-list td:first-child { width: 34%; font-weight: 600; }
+.ar-lock { font-size: 12px; margin-left: 8px; }
+.ar-lock svg { display: inline-block; vertical-align: -3px; }
+.ar-note { padding: 16px 24px; color: var(--fiori-text-3); border-top: 1px solid var(--fiori-border); font-size: 12px; }
+.ar-menu { position: relative; }
+.ar-menu summary { cursor: pointer; list-style: none; border: 1px solid var(--fiori-border); border-radius: 5px; width: 30px; height: 30px; padding: 0; display: grid; place-items: center; }
+.ar-menu > div { position: absolute; right: 32px; top: -8px; background: white; box-shadow: 0 4px 18px #0002; border: 1px solid var(--fiori-border); border-radius: 6px; width: 160px; z-index: 4; padding: 5px; }
+.ar-menu button { display: block; border: 0; background: none; width: 100%; padding: 9px; text-align: left; cursor: pointer; font: inherit; }
+.ar-menu button:hover { background: var(--fiori-page-bg); }
+.ar-danger { color: var(--fiori-error); }
+.ar-editor { display: flex; flex-direction: column; background: white; border: 1px solid var(--fiori-border); border-radius: 8px; box-shadow: 0 1px 4px rgba(26, 43, 75, 0.06); }
+.ar-editor-body { padding: 24px; }
+.ar-editor-body > .ar-card { margin-bottom: 20px; }
+.ar-fields { display: grid; grid-template-columns: 170px minmax(200px, 540px); gap: 20px; align-items: start; padding: 0 0 24px; border-bottom: 1px solid var(--fiori-border); }
+.ar-fields > label { padding-top: 10px; font-weight: 600; }
+.ar-fields input, .ar-fields textarea { width: 100%; border: 1px solid var(--fiori-border); border-radius: 5px; padding: 10px 12px; font: inherit; background: white; color: var(--fiori-text-1); }
+.ar-fields textarea { resize: vertical; }
+.ar-count { text-align: right; font-size: 11px; color: var(--fiori-text-3); padding-top: 4px; }
+.ar-section-intro { margin: 24px 0 18px; }
+.ar-section-heading { display: flex; justify-content: space-between; align-items: center; padding: 17px 20px; border-bottom: 1px solid var(--fiori-border); }
+.ar-section-heading label, .ar-options label { display: flex; align-items: center; gap: 10px; cursor: pointer; }
+.ar-permissions { min-width: 760px; table-layout: fixed; }
+.ar-permissions th:first-child { width: 29%; text-align: left; }
+.ar-permissions th, .ar-permissions td { padding: 13px 10px; text-align: center; }
+.ar-permissions tbody th { font-weight: 500; padding-left: 20px; }
+.ar-permissions .ar-full { background: var(--fiori-page-bg); }
+.ar-permissions td .ar-link { font-size: 12px; }
+.access-roles input[type=checkbox] { accent-color: var(--fiori-brand); width: 16px; height: 16px; flex-shrink: 0; cursor: pointer; }
+.access-roles input:disabled, .access-roles button:disabled { cursor: default; opacity: .6; }
+.access-roles :focus-visible { outline: 2px solid var(--fiori-focus); outline-offset: 3px; }
+.ar-options { display: flex; flex-direction: column; gap: 22px; padding: 22px 20px; }
+.ar-switch { width: 38px; height: 22px; border: 0; border-radius: 12px; background: var(--fiori-border-strong); padding: 3px; cursor: pointer; }
+.ar-switch span { display: block; width: 16px; height: 16px; border-radius: 50%; background: white; transition: transform .15s; }
+.ar-switch.is-on { background: var(--fiori-brand); }
+.ar-switch.is-on span { transform: translateX(16px); }
+.ar-report-toggle { border: 0; background: none; font: inherit; font-weight: 600; width: 100%; display: flex; align-items: center; gap: 10px; text-align: left; cursor: pointer; color: var(--fiori-text-1); }
+.ar-report-toggle > span { display: inline-flex; transition: transform .15s ease; }
+.ar-report-toggle > span.is-expanded { transform: rotate(90deg); }
+.ar-footer { position: sticky; bottom: 0; z-index: 10; padding: 16px 24px; background: white; border-top: 1px solid var(--fiori-border); border-radius: 0 0 8px 8px; box-shadow: 0 -2px 8px rgba(26, 43, 75, 0.05); }
+.ar-footer > div { display: flex; gap: 10px; }
+.ar-footer .ar-error { color: var(--fiori-error); margin: 0 0 10px; }
+.ar-dialog { border: 1px solid var(--fiori-border); border-radius: 8px; width: 560px; max-width: calc(100vw - 32px); padding: 0; margin: auto; color: var(--fiori-text-1); }
+.ar-dialog::backdrop { background: #1d2d3e66; }
+.ar-info { color: var(--fiori-text-3); cursor: help; }
+@media (max-width: 700px) { .ar-fields { grid-template-columns: 1fr; gap: 10px; } .ar-heading, .ar-editor-body { padding: 16px; } }
+.ar-role-list tr:last-child .ar-menu > div { top: auto; bottom: 0; }

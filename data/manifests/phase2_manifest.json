@@ -1,0 +1,27 @@
+{
+  "seed": 20261022,
+  "counts": {
+    "employees": 3000,
+    "pay_groups": 1,
+    "pay_periods": 3,
+    "time_entries": 90000,
+    "leave_records": 3000,
+    "allowance_transactions": 5000,
+    "deduction_transactions": 5000,
+    "exceptions": 4,
+    "approvals": 4,
+    "payroll_exports": 0,
+    "validation_rules": 10
+  },
+  "sha256": {
+    "data\\generated\\pay_periods.csv": "0335e1a360f3c29270c177816e08f5ace9c44f213180228a7a595daee964f9bc",
+    "data\\generated\\employees.csv": "bfe141003c55225774452e8723c56964245ea0ddf2923f90948523c665a8602e",
+    "data\\generated\\time_entries.csv": "3e5f57616aa18bc42836f1eed6e41962e024e9bca1ca591de36373967a2a3cb8",
+    "data\\generated\\leave_records.csv": "f4e2ea90208026366f6058e897658a508d6ad9b50ad4b31c15b1ba86cfc9963b",
+    "data\\generated\\allowance_transactions.csv": "c80d4cf77e96bb3901c21b3166f807e907c8416b0c9ca56843bbe406d2b6185e",
+    "data\\generated\\deduction_transactions.csv": "685daa86ba3fdaa4cba7f0ab00628c9e571143d4b7fc7310b519dbd50fdcfefc",
+    "data\\generated\\exceptions.csv": "bf342bdc25edf5b859cc848400500bdaaf1d4c008aaf54c839a6372433173701",
+    "data\\generated\\approvals.csv": "ea7f6a7614cd622ece723e5fc4511a7d8acd8d0b211995b7084f45a857680f01",
+    "data\\ground_truth\\ground_truth.csv": "0db4ae6c3dcf9b574182608c8bd0fe528449cb971e17fb18328e11db9f4b7730"
+  }
+}
